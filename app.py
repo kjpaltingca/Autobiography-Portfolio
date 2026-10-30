@@ -84,7 +84,6 @@ def build_summary(age: int, show_age: bool) -> str:
     if show_age:
         out.append(f"Age: {age}")
     out += ["", "EDUCATION"] + [f"- {e['program']} ({e['level']})" for e in D.EDUCATION]
-    out += ["", "COURSEWORK", ", ".join(D.COURSES)]
     out += ["", "SKILLS"] + [f"{c}: {', '.join(s)}" for c, s in D.SKILLS.items()]
     out += ["", "PROJECTS"] + [f"- {x['title']} [{x['status']}]: {x['description']}" for x in D.PROJECTS]
     out += ["", "EXPERIENCE"] + [f"- {e['role']} - {e['company']} ({e['period']}, {e['duration']})" for e in D.EXPERIENCE]
@@ -271,9 +270,6 @@ def page_education():
         st.caption("Items that say “Add …” are editable placeholders.")
     else:
         st.dataframe(pd.DataFrame(D.EDUCATION), use_container_width=True, hide_index=True)
-    st.divider()
-    st.subheader("📚 Coursework")
-    st.markdown(chips(D.COURSES), unsafe_allow_html=True)
 
 
 def page_skills():

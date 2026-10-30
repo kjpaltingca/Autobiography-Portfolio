@@ -18,10 +18,10 @@ PROFILE = {
 
 # Paste your real links. Leave "" to show a disabled button.
 SOCIALS = {
-    "GitHub": "https://github.com/kjpaltingca",
+    "GitHub": "",
     "LinkedIn": "",
     "Facebook": "",
-    "Gmail": "mailto:kimjoshua.pal@gmail.com",   # example: "mailto:you@example.com"
+    "Email": "",   # example: "mailto:you@example.com"
 }
 
 ABOUT_PARAGRAPHS = [
@@ -48,7 +48,6 @@ EDUCATION = [
      "school": "Add school name", "years": "Add years attended",
      "note": "Where my academic journey began, before shifting to Information Technology."},
 ]
-
 
 SKILLS = {
     "Programming Languages": ["Python", "Java", "JavaScript", "Kotlin", "HTML", "CSS"],
