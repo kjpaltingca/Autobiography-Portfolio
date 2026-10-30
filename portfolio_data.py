@@ -18,10 +18,10 @@ PROFILE = {
 
 # Paste your real links. Leave "" to show a disabled button.
 SOCIALS = {
-    "GitHub": "",
-    "LinkedIn": "",
-    "Facebook": "",
-    "Email": "",   # example: "mailto:you@example.com"
+    "GitHub": "https://github.com/kjpaltingca",
+    "LinkedIn": "https://www.linkedin.com/in/your-profile-name",
+    "Facebook": "https://www.facebook.com/your.profile",
+    "Gmail": "mailto:kimjoshua.pal@gmail.com",
 }
 
 ABOUT_PARAGRAPHS = [
