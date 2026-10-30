@@ -84,6 +84,7 @@ def build_summary(age: int, show_age: bool) -> str:
     if show_age:
         out.append(f"Age: {age}")
     out += ["", "EDUCATION"] + [f"- {e['program']} ({e['level']})" for e in D.EDUCATION]
+    out += ["", "COURSEWORK", ", ".join(D.COURSES)]
     out += ["", "SKILLS"] + [f"{c}: {', '.join(s)}" for c, s in D.SKILLS.items()]
     out += ["", "PROJECTS"] + [f"- {x['title']} [{x['status']}]: {x['description']}" for x in D.PROJECTS]
     out += ["", "EXPERIENCE"] + [f"- {e['role']} - {e['company']} ({e['period']}, {e['duration']})" for e in D.EXPERIENCE]
@@ -206,10 +207,12 @@ def page_home():
     show_age = st.session_state.show_age
     left, right = st.columns([1.6, 1], gap="large")
     with left:
+        tag_html = f'<div><span class="status">{esc(p["hero_tag"])}</span></div>' if p.get("hero_tag") else ""
         age_txt = f" · {st.session_state.age} years old" if show_age else ""
         st.markdown(
             f'<div class="hero"><div class="eyebrow">Hello, world 👋</div>'
             f'<h1>I\'m <span class="grad">{esc(p["name"])}</span></h1>'
+            f'{tag_html}'
             f'<h3 class="muted">{esc(p["headline"])}</h3><p>{esc(p["intro"])}</p>'
             f'<p class="muted">📍 {esc(p["location"])}{esc(age_txt)}</p>'
             f'{chips(["Software Development", "Game Development"])}</div>', unsafe_allow_html=True)
@@ -268,6 +271,9 @@ def page_education():
         st.caption("Items that say “Add …” are editable placeholders.")
     else:
         st.dataframe(pd.DataFrame(D.EDUCATION), use_container_width=True, hide_index=True)
+    st.divider()
+    st.subheader("📚 Coursework")
+    st.markdown(chips(D.COURSES), unsafe_allow_html=True)
 
 
 def page_skills():

@@ -8,10 +8,11 @@ PROFILE = {
     "age": 28,                       # editable (also in the sidebar settings)
     "location": "Cebu, Philippines",
     "course": "Bachelor of Science in Information Technology",
-    "year_level": "Fourth Year",
+    "year_level": "Third Year",
     "career_interest": "Software Development and Game Development",
+    "hero_tag": "Applied AI G01 (CSIT349)",   # shown under your name on the Home page ("" to hide)
     "headline": "IT Student & Aspiring Software Developer",
-    "intro": ("I am a fourth-year BSIT student from Cebu, Philippines, passionate about "
+    "intro": ("I am a third-year BSIT student from Cebu, Philippines, passionate about "
               "software development and game development."),
 }
 
@@ -24,7 +25,7 @@ SOCIALS = {
 }
 
 ABOUT_PARAGRAPHS = [
-    "I am a fourth-year Bachelor of Science in Information Technology student from Cebu, Philippines. "
+    "I am a third-year Bachelor of Science in Information Technology student from Cebu, Philippines. "
     "My academic journey began in Electronics Engineering, where I spent three years studying before "
     "deciding to pursue Information Technology because of my growing interest in computers, programming, "
     "and software development.",
@@ -39,7 +40,7 @@ ABOUT_PARAGRAPHS = [
 ]
 
 EDUCATION = [
-    {"program": "Bachelor of Science in Information Technology", "level": "Fourth Year",
+    {"program": "Bachelor of Science in Information Technology", "level": "Third Year",
      "school": "Add school name", "years": "Expected graduation: add year",
      "note": "Current program. Interests include web development, database management, "
              "software engineering, and application development."},
@@ -47,6 +48,7 @@ EDUCATION = [
      "school": "Add school name", "years": "Add years attended",
      "note": "Where my academic journey began, before shifting to Information Technology."},
 ]
+
 
 SKILLS = {
     "Programming Languages": ["Python", "Java", "JavaScript", "Kotlin", "HTML", "CSS"],
