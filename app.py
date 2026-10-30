@@ -86,7 +86,7 @@ def build_summary(age: int, show_age: bool) -> str:
     out += ["", "EDUCATION"] + [f"- {e['program']} ({e['level']})" for e in D.EDUCATION]
     out += ["", "SKILLS"] + [f"{c}: {', '.join(s)}" for c, s in D.SKILLS.items()]
     out += ["", "PROJECTS"] + [f"- {x['title']} [{x['status']}]: {x['description']}" for x in D.PROJECTS]
-    out += ["", "EXPERIENCE"] + [f"- {e['role']} - {e['company']} ({e['period']}, {e['duration']})" for e in D.EXPERIENCE]
+    out += ["", "EXPERIENCE"] + [f"- {e.get('role', '')} - {e.get('company', '')} ({e.get('period', '')}, {e.get('duration', '')})" for e in D.EXPERIENCE]
     out += ["", "INTERESTS", ", ".join(D.INTERESTS)]
     return "\n".join(out)
 
@@ -330,12 +330,15 @@ def page_experience():
     heading("Where I've worked", "Experience", "Customer service, virtual assistance, and invoice processing.")
     out = '<div class="tl">'
     for e in D.EXPERIENCE:
-        out += (f'<div class="tli"><div class="tlmeta">{esc(e["period"])} · {esc(e["duration"])}</div>'
-                f'<h4>{esc(e["role"])}</h4><p>{esc(e["company"])}</p></div>')
+        # .get() keeps the page working even if a field is missing in the data file
+        meta = " · ".join(x for x in (e.get("period", ""), e.get("duration", "")) if x)
+        out += (f'<div class="tli"><div class="tlmeta">{esc(meta)}</div>'
+                f'<h4>{esc(e.get("role", ""))}</h4><p>{esc(e.get("company", ""))}</p></div>')
     st.markdown(out + "</div>", unsafe_allow_html=True)
     for e in D.EXPERIENCE:
-        with st.expander(f"Details: {e['role']} ({e['company']})"):
-            for d in e["details"]:
+        label = f"Details: {e.get('role', '')} ({e.get('company', '')})" if e.get("company") else f"Details: {e.get('role', '')}"
+        with st.expander(label):
+            for d in e.get("details", []):
                 st.markdown(f"- {d}")
 
 

@@ -85,7 +85,7 @@ PROJECTS = [
 ]
 
 EXPERIENCE = [
-    {"role": "Invoice Processing / Virtual Assistant", "company": "Add company / client",
+    {"role": "Invoice Processing / Virtual Assistant", "company": "Deepsky",
      "period": "Since 2023", "duration": "Ongoing",
      "details": ["Invoice processing using Xero", "Administrative and accounting-related support"]},
     {"role": "Customer Service Representative", "company": "ePerformax",
@@ -94,7 +94,7 @@ EXPERIENCE = [
     {"role": "Customer Service Representative", "company": "Qualfon",
      "period": "Add dates", "duration": "Approximately 3 months",
      "details": ["Add your responsibilities here"]},
-    {"role": "Part-time Virtual Assistant", "company": "Accounting Firm",
+    {"role": "Part-time Virtual Assistant", "Deepsky": "Accounting Firm",
      "period": "Add dates", "duration": "Part-time",
      "details": ["Add your responsibilities here"]},
 ]
